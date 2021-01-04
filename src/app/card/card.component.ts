@@ -22,15 +22,11 @@ export class CardComponent implements OnInit {
     if(confirm("Are you sure you wish to delete this card?")){
     this.deleteCard.emit(value)
     }
-    else{
-      debugger
-      // this..nativeElement.blur()
-    }
   }
   ngOnInit() {
     this.editcardform = this.fb.group({
         
-      cardedit: ['', Validators.required, this.checkDuplicate],
+      cardedit: ['', Validators.required],
       
   });
   }
@@ -39,14 +35,13 @@ export class CardComponent implements OnInit {
   //   debugger
 
   // }
-  checkDuplicate(control:FormControl){
-  localStorage.getItem("All Tasks")
-  debugger
-  if (control.value) {
-    return { urlValid: true };
-  }
-  return null;
-  }
+  // checkDuplicate(control:FormControl){
+  // localStorage.getItem("All Tasks")
+  // if (control.value) {
+  //   return { urlValid: true };
+  // }
+  // return null;
+  // }
   get f() { return this.editcardform.controls; }
 
   dragStart(ev:any) {

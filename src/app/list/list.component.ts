@@ -47,7 +47,7 @@ export class ListComponent implements OnInit {
     const data = $event.dataTransfer.getData("text");
     let target = $event.target;
     const targetClassName = target.className;
-    debugger
+    // debugger
     while (target.className !== "list") {
       target = target.parentNode;
     }
@@ -64,7 +64,7 @@ export class ListComponent implements OnInit {
       } else {
         target.appendChild(document.getElementById(data));
       }
-      debugger
+      // debugger
     } else {
       target.appendChild(document.getElementById(data));
       var targetlist=$event.target.parentNode.querySelector(".list__title strong").innerText
