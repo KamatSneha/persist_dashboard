@@ -1,0 +1,26 @@
+.list-card {
+	
+	margin: 0 0 6px 0;
+	padding: 6px 6px 2px 8px;
+	border: 1px solid rgb(116, 116, 116);
+color: #fff;
+padding: 10px 10px;
+border-bottom: solid 1px var(--list-background);
+color: rgba(0, 0, 0, 0.87);
+display: flex;
+border: 4px;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+box-sizing: border-box;
+cursor: move;
+background: rgb(241, 239, 239);
+/* font-size: 20px; */
+}
+.close{
+    border-color: white;
+    background-color: transperant;
+    border: 0px;
+    color: grey;
+    font-size: larger;
+}

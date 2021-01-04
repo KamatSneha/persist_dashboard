@@ -1,0 +1,41 @@
+
+<div  class="example-box" cdkDrag>
+
+<div class="list"   (dragover)="allowDrop($event)" (drop)="drop($event)"  > 
+	<div class="example-handle" cdkDragHandle> Drag me Here
+		<svg width="15px" fill="currentColor" viewBox="0 0 24 24">
+		  <path d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+		  <path d="M0 0h24v24H0z" fill="none"></path>
+		</svg>
+	  </div>
+	<p class="list__title"  *ngIf="!listedit" (click)="changeValue(list.listname)" ><strong>{{list.listname}}</strong>
+		
+	<button class="close-list col-sm-2" mat-button (click)="deleteList(list.listname)">X</button>
+	</p>
+	<div class="mb-2" [hidden]="!listedit">
+		<form [formGroup]="editlistform" >
+	
+			<input #editListInput formControlName="listedit" type="text" (keyup.enter)="editList(list.listname,editListInput.value);  "  class="form-control input-list" [ngClass]="{ 'is-invalid': submittedlist && g.listedit.errors }" >
+			<div *ngIf="submittedlist && g.listedit.errors" class="invalid-feedback">
+			  <div *ngIf="g.listedit.errors.required">Name is Mandatory</div>
+			</div>
+			</form>
+		
+	  </div>
+
+
+	<div class="cards">
+		<app-card *ngFor="let cardId of list.listitems" [card]="taskList.getCard(cardId)" (deleteCard)="delete($event)" (editCardValue)="edit($event)"></app-card>
+	</div>
+	<form [formGroup]="listform" >
+
+	<input #addListInput formControlName="cardname" type="text" (keyup.enter)="onEnter(addListInput.value); addListInput.value='';" *ngIf="displayAddCard" [ngClass]="{ 'is-invalid': submitted && f.cardname.errors }">
+	<div *ngIf="submitted && f.cardname.errors" class="invalid-feedback">
+        <div *ngIf="f.cardname.errors.required" >Name is Mandatory</div>
+      </div>
+	  </form>
+	  
+
+	<a href="#" *ngIf="!displayAddCard" class="list__newcard" (click)="toggleDisplayAddCard();">Add a card...</a>
+</div>
+</div>

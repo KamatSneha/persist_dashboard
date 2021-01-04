@@ -1,0 +1,75 @@
+.list {
+	width: 309px;
+	padding: 6px;
+	margin: 5px;
+	display: inline-block;
+	border: solid 1px var(--list-background);
+    min-height: 60px;
+    background:  var(--list-background);
+	border-radius: 4px;
+	height: 400px;
+   
+     
+}
+.cards{
+	height:295px;
+	/* overflow-y: scroll; */
+	overflow: auto;
+}
+/* Works on Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color:  var(--list-background),white;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+	width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+	background: white;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+	background-color:  var(--list-background);
+	border-radius: 20px;
+	border: 3px solid white;
+  }
+.list__title {
+	margin: 0;
+	padding: 16px 0;
+	width:100%;
+	margin-top:20px !important;
+}
+.list a {
+	width: 100%;
+	display: block;
+	text-decoration: none;
+	margin-top: 10px;
+}
+.close-list{
+    border-color: var(--list-background);;
+    background-color: transperant;
+    border: 0px;
+    color: grey;
+	font-size: large;
+	background:  var(--list-background);
+	float:right;
+	padding-right: 4%;
+}
+.example-handle{
+	color: #838588;
+	float: right;
+	padding-right: 5px;
+	padding-top: 0px !important;
+}
+/* .example-handle {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #ccc;
+	cursor: move;
+	width: 24px;
+	height: 24px;
+  } */

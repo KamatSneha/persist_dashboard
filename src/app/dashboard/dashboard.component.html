@@ -1,0 +1,33 @@
+<!-- <div cdkDropListGroup>
+    <div *ngFor="let task of taskList" class="task-container"> -->
+      <!-- <h2>Available items</h2> -->
+  
+      <!-- <div
+        cdkDropList
+        [cdkDropListData]="task.listitems"
+        class="example-list"
+        cdkDropListSortingDisabled
+        (cdkDropListDropped)="draganddrop.drop($event)">
+        <h4 class="margin-1 font-bold">{{task.listname}}</h4>
+        <div class="task-box margin-1" *ngFor="let item of task.listitems" cdkDrag>{{item}}</div>
+        <h4 class="margin-1 color-grey">+ Add another Task</h4>
+    </div>
+    
+    </div> -->
+    <div class="dashboard-list" cdkDropList  (cdkDropListDropped)="drop($event)">
+      <app-list *ngFor="let list of listStructure" [list]="list" [taskList]="taskList" (deleteListValue)="delete($event)" (editListValue)="edit($event)"></app-list>
+      
+      <div class="add-new-textbox" *ngIf="displayAddList">
+      <form [formGroup]="taskform" >
+
+      <input #addListInput formControlName="listname" type="text" (keyup.enter)="onEnter(addListInput.value); addListInput.value=''; displayAddList=false;"  class="form-control input-list" [ngClass]="{ 'is-invalid': submitted && f.listname.errors }" >
+      <div *ngIf="submitted && f.listname.errors" class="invalid-feedback">
+        <div *ngIf="f.listname.errors.required">Name is Mandatory</div>
+      </div>
+      </form>
+    </div> 
+      <button class="add-list col-sm-2" mat-button (click)="toggleDisplayAddList()"><strong>+ Add another list</strong></button>
+      
+      
+    </div>
+   

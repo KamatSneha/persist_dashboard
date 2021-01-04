@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%;  }
+:root {
+    /* Colors */
+    --toolbar-dark-grey:#444443;
+    --white : white;
+    --board-background:grey;
+    --list-background:#ccc;
+    --board-body:rgb(112, 112, 112);
+    /* Shadows */
+    --background-tertiary-shadow: 0 1px 3px 0 rgba(92, 125, 153, 0.5);
+  }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: var(--board-body) 
+
+}
+button:focus{
+  outline:none !important;
+}
+input{
+    width: 287px !important;
+    padding: 10px;
+    border: 1px solid rgb(153, 148, 153);
+    outline: 0;
+    background: #fff;
+    box-shadow:none;
+    width: 328px;
+
+    margin-bottom: 10px;
+  }
+  .is-invalid{
+        border: red 1px solid;
+    
+    
+  }
+
+  .invalid-feedback{
+      color:red
+  }
+  .z-index-1{
+      position: relative;
+      z-index:1;
+      padding-top:40px !important;
+  }
+  .z-index-2{
+      position: relative;
+      z-index: 2;
+  }
+  .dashboard-list{
+    display: flex;
+    padding: 0 5px;
+    /* height: 100%; */
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    align-content: space-between;
+    /* overflow-y: scroll; */
+    width:99%;
+    margin: 10% 25px 25px 0;
+  }
+
+
+  .cdk-drag-preview {
+    box-shadow: 0 3px 3px -3px #0084ff;
+}
+  .cdk-drag-placeholder {
+    background: #ccc;
+    border: dotted 1px #999;
+    transition: transform 500ms ease;
+}
+  
+  .cdk-drag {
+    transition: transform 300ms ease;
+}
+  .cdk-drag-animating {
+    transition: transform 300ms ease;
+}
+.box-custom-placeholder {
+  height: 20px;
+  width: 120px;
+  background: #fff;
+  border: dotted 1px #0084ff;
+  transition: transform 200ms ease;
+}
+
+.box-list.cdk-drop-list-dragging .drag-box:not(.cdk-drag-placeholder) {
+  transition: transform 500ms ease;
+}

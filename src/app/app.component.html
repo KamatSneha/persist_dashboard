@@ -1,0 +1,12 @@
+<div class="toolbar" >
+
+  <h3 class="header-text header-body">Persist</h3>
+  <h5 class="header-body">(Persistent Task management Board)</h5>
+  <button mat-button class="theme-button" [matMenuTriggerFor]="change_theme">Change Theme</button>
+  <mat-menu #change_theme="matMenu">
+    <button mat-menu-item (click)="toggleTheme()" >Light</button>
+    <button mat-menu-item (click)="toggleTheme()" >dark</button>
+  </mat-menu>
+</div>
+
+<app-dashboard></app-dashboard>
