@@ -8,14 +8,14 @@
 		  <path d="M0 0h24v24H0z" fill="none"></path>
 		</svg>
 	  </div>
-	<p class="list__title"  *ngIf="!listedit" (click)="changeValue(list.listname)" ><strong>{{list.listname}}</strong>
+	<p class="list__title"  *ngIf="!listedit" (click)="changeValue(list?.listname)" ><strong>{{list?.listname}}</strong>
 		
-	<button class="close-list col-sm-2" mat-button (click)="deleteList(list.listname)">X</button>
+	<button class="close-list col-sm-2" mat-button (click)="deleteList(list?.listname)">X</button>
 	</p>
 	<div class="mb-2" [hidden]="!listedit">
 		<form [formGroup]="editlistform" >
 	
-			<input #editListInput formControlName="listedit" type="text" (keyup.enter)="editList(list.listname,editListInput.value);  "  class="form-control input-list" [ngClass]="{ 'is-invalid': submittedlist && g.listedit.errors }" >
+			<input #editListInput formControlName="listedit" type="text" (keyup.enter)="editList(list?.listname,editListInput.value);  "  class="form-control input-list" [ngClass]="{ 'is-invalid': submittedlist && g.listedit.errors }" >
 			<div *ngIf="submittedlist && g.listedit.errors" class="invalid-feedback">
 			  <div *ngIf="g.listedit.errors.required">Name is Mandatory</div>
 			</div>
@@ -25,7 +25,7 @@
 
 
 	<div class="cards">
-		<app-card *ngFor="let cardId of list.listitems" [card]="taskList.getCard(cardId)" (deleteCard)="delete($event)" (editCardValue)="edit($event)"></app-card>
+		<app-card *ngFor="let cardId of list?.listitems" [card]="taskList.getCard(cardId)" (deleteCard)="delete($event)" (editCardValue)="edit($event)"></app-card>
 	</div>
 	<form [formGroup]="listform" >
 

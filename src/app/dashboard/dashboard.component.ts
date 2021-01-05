@@ -54,9 +54,10 @@ export class DashboardComponent implements OnInit {
     // this.listStructure=listStructure
   }
   toggleDisplayAddList() {
+    
     this.displayAddList = !this.displayAddList;
   }
-  create  (name: string) {
+  create  () {
       let x=this.listStructure.push({listname:'',listitems:[]})
       console.log('New board generated!');
     

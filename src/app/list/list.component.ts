@@ -75,6 +75,7 @@ export class ListComponent implements OnInit {
   }
   onEnter(value: string) {
     this.submitted=true
+    debugger
     if (this.listform.invalid) {
       this.displayAddCard=true
       return;

@@ -74,11 +74,11 @@ export class CardComponent implements OnInit {
   };
   changeValue(name){
     this.editcardform.setValue({
-      cardedit:[name]  
+      cardedit:name  
     });
     this.edit= !this.edit
   }
-  close(ev:any){
+  close(){
     this.isDeletd = ! this.isDeletd;
     
     // this.tasks=JSON.parse(localStorage["All Tasks"])

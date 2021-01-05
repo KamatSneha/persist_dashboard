@@ -1,8 +1,8 @@
-<p *ngIf="isDeletd && !edit" cardedit class="card list-card" draggable="true" (dragstart)="dragStart($event)" id="{{card.id}}" (click)="changeValue(card.cardname)">
+<p *ngIf="isDeletd && !edit" cardedit class="card list-card" draggable="true" (dragstart)="dragStart($event)" id="{{card?.id}}" (click)="changeValue(card?.cardname)">
     
-    {{card.cardname}}
+    {{card?.cardname}}
 
-    <button class="close col-sm-1" mat-button (click)="deleteCardValue(card.id)">X</button>
+    <button class="close col-sm-1" mat-button (click)="deleteCardValue(card?.id)">X</button>
 
 </p>
    
@@ -10,7 +10,7 @@
 
     <form [formGroup]="editcardform" >
 
-        <input #cardedit formControlName="cardedit" type="text" (keyup.enter)="editCard(card.id,cardedit.value)"  class="form-control input-list input-box" [ngClass]="{ 'is-invalid': submitted && f.cardedit.errors }" >
+        <input #cardedit formControlName="cardedit" type="text" (keyup.enter)="editCard(card?.id,cardedit?.value)"  class="form-control input-list input-box" [ngClass]="{ 'is-invalid': submitted && f.cardedit.errors }" >
         <div *ngIf="submitted && f.cardedit.errors" class="invalid-feedback">
           <div *ngIf="f.cardedit.errors.required">Name is Mandatory</div>
         </div>
